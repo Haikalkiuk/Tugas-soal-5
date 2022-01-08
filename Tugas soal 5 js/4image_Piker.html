@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 Image picker</title>
+</head>
+<body>
+    <style>
+        *{
+
+            margin-top: auto;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <select name="" id="daftar" onchange="tampil()">
+        <option value="">-Pilih Hewan-</option>
+        <option value="kucing">Kucing</option>
+        <option value="harimau">Harimau</option>
+        <option value="elang">elang</option>
+        <option value="Gorila">Gorila</option>
+        <option value="panda">Panda</option>
+        <option value="kangguru">Kangguru</option>
+        <option value="kuda">Kuda</option>
+    </select>
+    <div id="hasil"></div>
+
+    <script>
+        let daftar = document.getElementById("daftar")
+        let hasil = document.getElementById("hasil")
+
+        function tampil(){
+            switch (daftar.value) {
+                case "kucing":
+                hasil.innerHTML = '<img src="data:image/jpeg;base64,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" alt="">'
+                alert("ini adalah gambar Kucing")
+                break;
+
+                case "harimau":
+                hasil.innerHTML = '<img src="https://e7.pngegg.com/pngimages/386/627/png-clipart-tiger-tiger.png" alt="">'
+                alert("ini adalah gambar Harimau")
+                break;
+
+                case "elang":
+                hasil.innerHTML = '<img src="https://img1.pngdownload.id/20180322/coe/kisspng-car-mile-high-harley-davidson-motorcycle-decal-eagle-5ab3bc5358db78.400606511521728595364.jpg" alt="">'
+                alert("ini adalah gambar elang")
+                break;
+
+                case "Gorila":
+                hasil.innerHTML = '<img src="https://toppng.com/uploads/preview/gorilla-1152322159127zuddfjmu.png" alt="">'
+                alert("ini adalah gambar Gorilla")
+                break;
+
+                case "panda":
+                hasil.innerHTML = '<img src="https://w7.pngwing.com/pngs/198/737/png-transparent-panda-panda-giant-panda-panda-panda-panda-thumbnail.png" alt="">'
+                alert("ini adalah gambar Panda")
+                break;
+
+                case "kangguru":
+                hasil.innerHTML = '<img src="https://e7.pngegg.com/pngimages/242/439/png-clipart-kangaroo-kangaroo-thumbnail.png" alt="">'
+                alert("ini adalah gambar Kangguru")
+                break;
+
+                case "kuda":
+                hasil.innerHTML = '<img src="https://www.pikpng.com/pngl/m/161-1617712_gambar-kuda-png-horse-photo-white-background-clipart.png" alt="">'
+                alert("ini adalah gambar Kuda")
+                break;
+
+                default:
+                    hasil.innerHTML =""
+            }
+        }
+    </script>
+</body>
+</html>
